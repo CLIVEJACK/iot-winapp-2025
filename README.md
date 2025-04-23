@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/78714602-2a70-4c58-9778-196992490d11
 # iot-winapp-2025
 Iot 개발자 C#/WinApp 리포지토리 2025
 
@@ -479,12 +477,6 @@ Iot 개발자 C#/WinApp 리포지토리 2025
         - 예외클래스를 모르겠다 싶으면 Exception으로 처리
 
         <img src="./image/cs0007.png" width="600">
-
-        
-
-        Uploading KakaoTalk_20250423_113102243.mp4…
-
-
 
 
     3. 컬렉션 -[소스](./day04/Day04Study/SyntaxWinApp02/FrmMain.cs)
