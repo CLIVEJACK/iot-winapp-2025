@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/8adcd8a9-c52c-4b7f-86c5-9d704025312f
 # iot-winapp-2025
 Iot 개발자 C#/WinApp 리포지토리 2025
 
