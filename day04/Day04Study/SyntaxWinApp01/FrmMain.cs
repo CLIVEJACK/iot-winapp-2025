@@ -9,30 +9,20 @@ namespace SyntaxWinApp01
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnCheck_Click(object sender, EventArgs e)
         {
             Person person = new Person();
 
             try
             {
-                person.Name = TxtName.Text.Trim();  // Trim()공백 제거
-                // int -> 4바이트 정수, decimal -> 16바이트 실수
-                // 큰사이즈의 데이터형에 작은 사이즈 데이터형 값을 할당(그냥 형변환 필요없다는듯)
-                //person.Age = NudAge.Value;
-                person.Age = Convert.ToInt32(NudAge.Value); // 이방식 더 선호
-                //person.Gender = char.Parse(TxtGender.Text.Trim());  // 이런식으로 Parse을 쓸려면 String에서 변경이 가능함
+                person.Name = TxtName.Text.Trim();
+                person.Age = Convert.ToInt32(NudAge.Value);  
                 person.Gender = Convert.ToChar(TxtGender.Text.Trim());
-                person.Phone = TxtPhone.Text.Trim();
+                person.Phone = TxtPhone.Text;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message, "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("성별은 M/F만 입력하세요", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("성별은 M/F 한글자만 입력하세요", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -42,46 +32,41 @@ namespace SyntaxWinApp01
                 int x = 10, y = 5;
                 rval = x / y;
 
-                MessageBox.Show(rval.ToString());
             }
-            catch (DivideByZeroException ex) //DivideByZeroException의 부모클래스를 사용해도 무방
+            catch (ArithmeticException ex)  
             {
-
-                MessageBox.Show("수는 0을 나눌수 없습니다.", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("수는 0으로 나눌 수 없습니다", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             catch (Exception ex)
             {
-                MessageBox.Show("MO?LU 예외입니다", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("알수 없는 예외입니다", "예외", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             finally
             {
-                //예외와 관계없이 항상 실행되어야 하는 구문 여기에 작성
+                // 예외와 관계없이 항상 실행되어야 하는 구문 여기에 작성
             }
 
             // 들어온 Person객체 값으로 처리
             person.BirthYear = DateTime.Now.Year - person.Age;
 
-
             char korGender = person.Gender == 'M' ? '남' : '여';
             string result = $"현재 Person은 {person.Name},\r\n" +
                             $"나이, {person.Age}세({person.BirthYear}년생)\r\n" +
                             $"성별, {korGender}자\r\n" +
-                            $"성별, {person.Phone}";
+                            $"폰번호, {person.Phone}";
             TxtResult.Text = result;
-
 
             if (person.Age > 0 && person.Age < 20)
             {
                 if (person.Gender == 'M')
                     PicResult.Image = Resources.boy;
                 else
-                    PicResult.Image= Resources.girl;
+                    PicResult.Image = Resources.girl;
+
             }
-           
-            else if (person.Age < 20 && person.Age < 45)
+            else if (person.Age >= 20 && person.Age < 45)
             {
                 if (person.Gender == 'M')
                     PicResult.Image = Resources.man;
@@ -95,8 +80,6 @@ namespace SyntaxWinApp01
                 else
                     PicResult.Image = Resources.old_woman;
             }
-
-
         }
     }
 }

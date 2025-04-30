@@ -926,23 +926,143 @@ Iot 개발자 C#/WinApp 리포지토리 2025
     <img src="./image/cs0016.png" widht="600">
 
 
+
+
 ## 8일차 
 
+
 ### WPF 개발방법 및 컨트롤 2
-
-- 데이터베이스 데이터 바인딩
+- 데이터베이스 데이터 바인딩 - [소스](./day08/Day08Study/WpfStudyApp01/MainWindow.xaml.cs)
     - Xaml Binding 방식
+    - 실행결과 위와 동일
 
-- 네비게이션
-    - 화면 전환 
+- 네비게이션 - [소스](./day08/Day08Study/WpfStudyApp02/MainWindow.xaml)
+    - 화면 페이지전환
+    - 메뉴클릭으로 화면전환
+    - Window, Page 컨트롤
+        - Window : Main
+        - Page : Sub
+    - NavigationService 사용
+    - NavigationUIVisibility 속성
 
-- 컨트롤 디자인, 리소스
-    - 
+- 비트맵 디자인, 벡터 디자인 - [소스](./day08/Day08Study/WpfStudyApp03/MainWindow.xaml)
+    - 이미지는 속성 > 빌드 작업 > 리소스 선택
+    - 출력 디렉토리로 복사 > 복사 안 함 선택
+    - WPF Rectangle, Ellipse, Path 등은 전부 벡터이미지
+
+- 컨트롤 디자인, 리소스 - [소스](./day08/Day08Study/WpfStudyApp04/MainWindow.xaml)
+    - WPF는 컨트롤에 디자인도 맘대로 변경가능
+    - 리소스 : 컨트롤의 공유화
+        - App.xaml Application.Resources 에 필요한 컨트롤 디자인을 정의
+        - 각가의 Window, Page.xaml에 사용
+        - Application.Resources에 선언한 리소스 > StaticResource        
+
+    - ResourceDictionary - [소스](./day08/Day08Study/WpfStudyApp04/App.xaml)
+        - App.xaml 리소스를 계속 추가하면 유지보수가 어려워짐. 대안으로 리소스사전 생성
+    - 참조 깃허브 - https://github.com/StanislawSwierc/WpfThemesCollection 
+
+    <img src="./image/cs0019.png" width="600">
+
+### MahApps.Metro 프레임워크
+- 공식사이트 - https://mahapps.com/
+    - 최소한 노력으로 Metro UI/Modern UI를 적용시킬수 있는 프레임워크
+    - 2011년 개발시작, 2014년 1.0배포, 현재 버전 2.4.10
+    - Metro UI, Modern UI - MS에서 시작한 디자인 스타일
+    - 깔끔하고 입체감을 최소화 시킴
+
+- 사용법 - [소스](./day08/Day08Study/WpfStudyApp05/MainWindow.xaml)
+    1. NuGet 패키지 관리 > 
+        - MahApps.Metro 설치
+        - MahApps.Metro.IconPacks 설치
+    2. https://github.com/MahApps/MahApps.Metro/releases
+        - MahApps.Metro.Demo-v2.4.10-rc0001.zip 다운로드
+    3. https://github.com/MahApps/IconPacks.Browser
+        - IconPacks.Browser-net8-v2.0.0.zip 다운로드
+    4. App.xaml에 필요한 리소스 코드 복붙
+    5. MainWindow.xaml.cs
+        - Window -> MetroWindow 변경
+    6. MainWindow.xaml
+        - mah 네임스페이스 추가
+        - Window -> mah.MetroWindow로 변경
+
+    7. 실행결과 
+
+        <img src="./image/cs0020.png" width="600">
+
+    8. Theme - Light, Dark 2개
+    9. Accent - Amber ~ Yellow 총 23개
+
+- 연습예제
+    - MahApps.Metro.Demo를 확인하면서 컨트롤 추가
+    - MahApps.Metro Github 소스를 확인필요
+
+    <img src="./image/cs0021.png" width="600">
 
 ## 9일차
 
-### C# 응용 - WPF
-- WPF 기본
+### MahApps.Metor 프레임워크
+- 컨트롤 사용법 - [소스](./day09/Day09Study/WpfStudyApp05/MainWindow.xaml)
+    - ProgressBar, MetorProgressBar, ProgressRing
+    - TabControl
+
+### Vs Tip
+- 프로젝트는 제어갷도 폴더와 파일은 그대로 존재
+    - 윈도우 탐색기에는 폴더 삭제요망
+
+### WPF UI 프레임워크
+- 개요
+    - Fluent UI라 이름의 Modern UI의 한 스타일 UI프레임워크 
+    - 2021년 1.0배포, 현재버전4.0.2
+
+- 기본 사용법 - [소스](./day09/Day09Study/WPFStudyApp04/MainWindow.xaml)
+    - NuGet 패키지 관리자 > WPF-UI 검색 후 설치
+    - VS Extension for WPF UI
+        - 메뉴 확장 > 확장관리
+        - WPF-UI 검색 후 설치
+        - VS 종료
+        - VSIS Installer 시작 > Modify
+    - VS Project > WPF UI 프로젝트 선택
+    - MainWindow.xaml을 추가 생성
+    - App.Xaml.cs 오픈 - [소스](./day09/Day09Study/WPFStudyApp04/App.xaml.cs)
+        ```cs
+         private static readonly IHost _host = Host
+            .CreateDefaultBuilder()
+            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+            .ConfigureServices((context, services) =>
+            {
+                throw new NotImplementedException("No service or window was registered.");
+            }).Build();
+
+        private async void OnStartup(object sender, StartupEventArgs e)
+        {
+            await _host.StartAsync();
+            //MainWindow 인스턴스 todtjd
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+            mainWindow.Show();  
+        }
+        ```
+
+    - MainWindow.xaml xmlns:ui 추가. App.xaml과 동일
+        ```xml
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        ```
+    - MainWindow.xaml Window -> ui:FluentWindow 변경
+    - Grid 내 타이틀바 추가
+        ```xml
+        <ui: TitleBar Title="WPF UI App" />
+        ```
+    - 실행결과
+
+        <img src="./image/cs0022.png" width="600">
+
+        [Dark Theme]
+        
+        <img src="./image/cs0023.png" width="600">
+
+        [Light Theme]
+
+    - Theme를 Dark로 했을 경우
+        - Window 전체 Background를 어두은색으로 지정 후 작업
 
 
 ## 10일차

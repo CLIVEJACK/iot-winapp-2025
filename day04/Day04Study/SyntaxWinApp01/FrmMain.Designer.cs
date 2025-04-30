@@ -139,7 +139,6 @@
             TxtName.Name = "TxtName";
             TxtName.Size = new Size(179, 23);
             TxtName.TabIndex = 1;
-            TxtName.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 

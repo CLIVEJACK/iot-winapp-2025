@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SyntaxWinApp01
+﻿namespace login01
 {
     internal class Person
     {
@@ -41,7 +35,7 @@ namespace SyntaxWinApp01
         public char Gender { get; set; }
         public string Phone { get; set; }
 
-        public int BirthYear {  get; set; } 
+        public int BirthYear { get; set; }
 
         // Python 클래스 __str__() 와 동일
         public override string ToString()
@@ -70,4 +64,3 @@ namespace SyntaxWinApp01
         }
     }
 }
-

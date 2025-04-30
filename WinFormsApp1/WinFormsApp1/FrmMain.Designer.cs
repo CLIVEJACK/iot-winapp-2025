@@ -91,6 +91,7 @@
             TxtIndex.Name = "TxtIndex";
             TxtIndex.Size = new Size(275, 112);
             TxtIndex.TabIndex = 6;
+            TxtIndex.TextChanged += TxtIndex_TextChanged;
             // 
             // FrmMain
             // 

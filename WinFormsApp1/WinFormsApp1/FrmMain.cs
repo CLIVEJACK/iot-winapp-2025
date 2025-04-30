@@ -18,8 +18,13 @@ namespace WinFormsApp1
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DtpBirth.Value.ToString(), "생일", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(TxtIndex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void TxtIndex_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
