@@ -1091,6 +1091,11 @@ Iot 개발자 C#/WinApp 리포지토리 2025
 
 
     - 화면 시연 영상
+ 
+    
+    https://github.com/user-attachments/assets/f0f41491-e4f0-41a5-9d9d-7c6d377c6a42
+
+
 
 
 
