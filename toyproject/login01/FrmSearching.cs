@@ -68,28 +68,28 @@ namespace login01
                             $"폰번호, {person.Phone}";
             TxtResult.Text = result;
 
-            if (person.Age > 0 && person.Age < 20)
-            {
+          
+            
                 if (person.Gender == 'M')
                     PicResult.Image = Resources.boy;
                 else
                     PicResult.Image = Resources.girl;
 
-            }
-            else if (person.Age >= 20 && person.Age < 45)
-            {
-                if (person.Gender == 'M')
-                    //PicResult.Image = Resources.man;
-                else
-                    //PicResult.Image = Resources.woman;
-            }
-            else
-            {
-                if (person.Gender == 'M')
-                    //PicResult.Image = Resources.old_man;
-                else
-                    //PicResult.Image = Resources.old_woman;
-            }
+            
+            //else if (person.Age >= 20 && person.Age < 45)
+            //{
+            //    if (person.Gender == 'M')
+            //        PicResult.Image = Resources.man;
+            //    else
+            //        PicResult.Image = Resources.woman;
+            //}
+            //else
+            //{
+            //    if (person.Gender == 'M')
+            //        PicResult.Image = Resources.old_man;
+            //    else
+            //        PicResult.Image = Resources.old_woman;
+            //}
         }
 
         private void PicResult_Click(object sender, EventArgs e)
