@@ -68,6 +68,7 @@
             RtbNote.Size = new Size(560, 251);
             RtbNote.TabIndex = 1;
             RtbNote.Text = "";
+            RtbNote.TextChanged += RtbNote_TextChanged;
             // 
             // BtnRed
             // 
@@ -97,6 +98,10 @@
             // DlgOpen
             // 
             DlgOpen.FileName = "openFileDialog1";
+            // 
+            // DlgSave
+            // 
+            DlgSave.FileOk += DlgSave_FileOk;
             // 
             // FrmMain
             // 

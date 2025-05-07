@@ -68,28 +68,21 @@ namespace login01
                             $"폰번호, {person.Phone}";
             TxtResult.Text = result;
 
-          
             
-                if (person.Gender == 'M')
-                    PicResult.Image = Resources.boy;
-                else
-                    PicResult.Image = Resources.girl;
+            
+            if (person.Gender == 'M')
+                PicResult.Image = Resources.boy;
+            else
+                PicResult.Image = Resources.girl;
 
-            
-            //else if (person.Age >= 20 && person.Age < 45)
-            //{
-            //    if (person.Gender == 'M')
-            //        PicResult.Image = Resources.man;
-            //    else
-            //        PicResult.Image = Resources.woman;
-            //}
-            //else
-            //{
-            //    if (person.Gender == 'M')
-            //        PicResult.Image = Resources.old_man;
-            //    else
-            //        PicResult.Image = Resources.old_woman;
-            //}
+            if (person.Gender == 'M')
+            {
+                MessageBox.Show($"{person.Name}은 범죄자입니다 \n심문하러가시죠","범죄자", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("선량한 시민입니다", "시민");
+            }
         }
 
         private void PicResult_Click(object sender, EventArgs e)

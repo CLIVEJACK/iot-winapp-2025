@@ -40,9 +40,9 @@
             label1 = new Label();
             PicResult = new PictureBox();
             groupBox2 = new GroupBox();
+            TxtPhone = new MaskedTextBox();
             NudAge = new NumericUpDown();
             TxtResult = new TextBox();
-            TxtPhone = new TextBox();
             TxtGender = new TextBox();
             TxtName = new TextBox();
             textBox10 = new TextBox();
@@ -159,9 +159,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(TxtPhone);
             groupBox2.Controls.Add(NudAge);
             groupBox2.Controls.Add(TxtResult);
-            groupBox2.Controls.Add(TxtPhone);
             groupBox2.Controls.Add(TxtGender);
             groupBox2.Controls.Add(TxtName);
             groupBox2.Controls.Add(textBox10);
@@ -177,6 +177,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox1";
             // 
+            // TxtPhone
+            // 
+            TxtPhone.Location = new Point(62, 137);
+            TxtPhone.Mask = "000-0000-0000";
+            TxtPhone.Name = "TxtPhone";
+            TxtPhone.Size = new Size(177, 23);
+            TxtPhone.TabIndex = 4;
+            // 
             // NudAge
             // 
             NudAge.Location = new Point(62, 66);
@@ -191,13 +199,6 @@
             TxtResult.Name = "TxtResult";
             TxtResult.Size = new Size(243, 127);
             TxtResult.TabIndex = 5;
-            // 
-            // TxtPhone
-            // 
-            TxtPhone.Location = new Point(62, 137);
-            TxtPhone.Name = "TxtPhone";
-            TxtPhone.Size = new Size(177, 23);
-            TxtPhone.TabIndex = 4;
             // 
             // TxtGender
             // 
@@ -285,6 +286,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "FrmSearching";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "사람얼굴찾기";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -310,7 +312,6 @@
         private Label label1;
         private GroupBox groupBox2;
         private TextBox TxtResult;
-        private TextBox TxtPhone;
         private TextBox TxtGender;
         private TextBox TxtName;
         private TextBox textBox10;
@@ -321,5 +322,6 @@
         private Label label8;
         private Button BtnCheck;
         private NumericUpDown NudAge;
+        private MaskedTextBox TxtPhone;
     }
 }

@@ -102,6 +102,7 @@
             Controls.Add(id);
             Controls.Add(label1);
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();

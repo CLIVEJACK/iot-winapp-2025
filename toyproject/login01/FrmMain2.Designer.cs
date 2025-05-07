@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             BtnSearching = new Button();
-            BtnIndex = new Button();
+            Btninterrogation = new Button();
             SuspendLayout();
             // 
             // BtnSearching
@@ -42,24 +42,25 @@
             BtnSearching.UseVisualStyleBackColor = true;
             BtnSearching.Click += BtnSearching_Click;
             // 
-            // BtnIndex
+            // Btninterrogation
             // 
-            BtnIndex.Location = new Point(229, 146);
-            BtnIndex.Name = "BtnIndex";
-            BtnIndex.Size = new Size(100, 40);
-            BtnIndex.TabIndex = 1;
-            BtnIndex.Text = "심문";
-            BtnIndex.UseVisualStyleBackColor = true;
-            BtnIndex.Click += Btn_Click;
+            Btninterrogation.Location = new Point(229, 146);
+            Btninterrogation.Name = "Btninterrogation";
+            Btninterrogation.Size = new Size(100, 40);
+            Btninterrogation.TabIndex = 1;
+            Btninterrogation.Text = "심문";
+            Btninterrogation.UseVisualStyleBackColor = true;
+            Btninterrogation.Click += Btninterrogation_Click;
             // 
             // FrmMain2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 311);
-            Controls.Add(BtnIndex);
+            Controls.Add(Btninterrogation);
             Controls.Add(BtnSearching);
             Name = "FrmMain2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMain2";
             ResumeLayout(false);
         }
@@ -67,6 +68,6 @@
         #endregion
 
         private Button BtnSearching;
-        private Button BtnIndex;
+        private Button Btninterrogation;
     }
 }

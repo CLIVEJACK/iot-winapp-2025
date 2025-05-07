@@ -63,7 +63,7 @@ namespace SyntaxWinApp03
             // 3. OpenFileDialog 사용 // doc, docx는 실제 로드 불가
             DlgOpen.FileName = string.Empty; // == "";
             DlgOpen.Filter = "RTF파일 (*.rtf)|*.rtf|Txt파일(*.txt)|+.txt";
-            DlgOpen.Title= "RTF파일 읽기";
+            DlgOpen.Title = "RTF파일 읽기";
 
             // 다이얼로그 창 열기 (DialogResult.OK) 취소 (DialogResult.Cancel)
             if (DlgOpen.ShowDialog() == DialogResult.OK)
@@ -115,7 +115,7 @@ namespace SyntaxWinApp03
             //RtbNote.SelectionColor = Color.Red;
             if (RtbNote.SelectionLength > 0)
             {
-                if(DlgColor.ShowDialog() == DialogResult.OK)
+                if (DlgColor.ShowDialog() == DialogResult.OK)
                 {
                     RtbNote.SelectionColor = DlgColor.Color;
                 }
@@ -141,6 +141,14 @@ namespace SyntaxWinApp03
 
         }
 
+        private void RtbNote_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void DlgSave_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 }

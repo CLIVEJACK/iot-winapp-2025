@@ -1067,4 +1067,35 @@ Iot 개발자 C#/WinApp 리포지토리 2025
 
 ## 10일차
 
-### 코딩테스트
+### 토이 프로젝트   
+- 경찰서 심문프로그램
+    - 경찰의 아이디와 비밀번호를 입력 맞다면 다음으로 넘어감 
+    - 사람들의 신원을 조회해서 범죄이력이 있으면 메시지를 띄워서 심문을 하라는 문구가 출력
+    - 심문 페이지로 들어가면 그사람의 심문을 한 내역을 작성하여 저장및 읽을수 있음
+
+    - 로그인 화면
+
+    <img src="./image/win01.png" width="600">
+
+    <img src="./image/win02.png" width="600">
+
+    <img src="./image/win03.png" width="600">
+
+    - 사람 검색 & 심문 
+
+    <img src="./image/win04.png" width="600">
+
+    <img src="./image/win05.png" width="600">
+
+    <img src="./image/win06.png" width="600">
+
+
+    - 화면 시연 영상
+
+
+
+
+
+
+
+

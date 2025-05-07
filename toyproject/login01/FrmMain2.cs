@@ -17,15 +17,17 @@ namespace login01
             InitializeComponent();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnSearching_Click(object sender, EventArgs e)
         {
             FrmSearching frmSearching = new FrmSearching();
             frmSearching.ShowDialog();
+        }
+
+        private void Btninterrogation_Click(object sender, EventArgs e)
+        {
+            Frminterrogation frminterrogation = new Frminterrogation();
+            frminterrogation.ShowDialog();
         }
     }
 }
